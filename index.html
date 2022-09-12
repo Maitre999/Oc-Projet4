@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="créer un site Lyon, agence de web design Lyon, agence web design, la panthere">
+    <meta name="description" content="Entreprise du Web Design à Lyon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+	<link rel="stylesheet" type="text/css" href="./css/style.min.css">
+	<link rel="preload" as="image" href="./assets/img/agence-la-panthere.webp">
+	<link rel="preload" as="image" href="./assets/img/texture-paper.avif">
+	<link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
+	
+	
+    <title>La Panthère</title>
+
+</head>
+
+<body>
+	<!--Header > Logo + Navigation-->
+	<header class="header">
+		<div class="header-wrapper">
+			<svg class="logo"  aria-label="Logo, La Panthère">
+				<use href="./assets/sprites.svg#logo"></use>
+			</svg>
+			<button aria-label="Ouvrir le menu" class="toggle-nav" onclick="myFunction()">
+				<svg class="navbar">
+					<use href="assets/sprites.svg#navbar"></use>
+				</svg>
+			</button>
+			<nav class="navigation">
+				<ul class="navbar">
+					<li class="nav-button">
+						<a href="index.html">Accueil</a>
+					</li>
+					<li class="nav-button">
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<nav class="navigation-slide" id="nav-slide">
+			<ul class="navbar-slide">
+				<li class="nav-button">
+					<a href="index.html">Accueil</a>
+				</li>
+				<li class="nav-button">
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main id="main">
+
+	<!--Section Presentation-->
+	<section class="top-banner">
+		<div id="slide-img" class="container-top-banner">
+			<div class="wrapper-banner">
+				<img src="./assets/img/logo.png" class="logo" alt="Logo, La Panthère"/>
+				<h1 class="company-name">
+					Agence La Panthère
+				</h1>
+				<button type="button" class="button" onclick="window.location.href='contact.html';">
+					Contact
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<!--Article Information-->
+	<article class="about-us">
+			<h2 class="about-us-title">L'agence La Panthère est une agence de web design qui aide les entreprises à devenir attractives et visibles sur Internet.</h2>
+			<div class="wrapper-info">
+				<div class="container-info">
+					<svg class="img-design"  aria-label="Design">
+						<use href="./assets/sprites.svg#img-design"></use>
+					</svg>
+					<h3 class="info-title">Web design</h3>
+					<p class="text">
+						Que vous ayez un site web qui a besoin d'un rafraîchissement ou que vous partiez de zéro, laissez-nous vous réaliser un design dont vous serez fier.
+					</p>
+				</div>
+				<div class="container-info">
+					<svg class="img-strat"  aria-label="Strategie">
+						<use href="./assets/sprites.svg#img-strat"></use>
+					</svg>
+					<h3 class="info-title">Stratégie</h3>
+					<p class="text">
+						Plutôt que de suggérer des designs à la mode, nous travaillerons avec vous pour comprendre vos objectifs commerciaux afin de vous proposer le meilleur design possible.<br>
+					</p>
+				</div>
+				<div class="container-info">
+					<svg class="img-pencil"  aria-label="Illustrations">
+						<use href="./assets/sprites.svg#img-pencil"></use>
+					</svg>
+					<h3 class="info-title">Illustrations</h3>
+					<p class="text">
+						Un bon design n'est rien sans de bonnes illustrations. Laissez faire notre équipe de graphistes talentueux pour donner à vos pages une touche finale d'élégance.
+					</p>
+				</div>
+			</div>
+			<p class="citation">
+				"L'agence La Panthère est une excellente agence web! Les web designers ont réussi à capturer l'essence de notre entreprise et à l'intégrer à notre site.
+				Cela nous a aidé à doubler nos ventes en ligne à Lyon."<br>
+				<span class="citation-author">
+					Maxime Guibard, PDG de "À vos fourchettes"
+				</span>
+			</p>
+	</article>
+
+	<!--Section Middle-Banner-->
+	<section class="middle-banner">
+		<div class="container-middle-banner">
+			<h2 class="text-banner">
+				Nous souhaitons aider les entreprises de la région Lyonnaise à se développer et à connaître le succès. Nous travaillons pour aider les entreprises locales à attirer de nouveaux clients.<br>
+			</h2>
+			<p class="text">
+				Nous aimons collaborer avec des entrepreneurs créatifs et des entreprises locale, qu’elles aient besoin de créer un site de A à Z ou de donner un coup de jeune à leur site. 
+				Que vous ayez besoin d’une identité visuelle complète ou d’une refonte de votre site, n’hésitez pas à nous contacter. Nous travaillerons ensemble pour créer des sites beau et bien structurés, qui seront facilement trouvable sur les moteurs de recherche.
+			</p>
+			<a class="link" href="contact.html">Contactez notre équipe</a>
+		</div>
+	</section>
+
+	<!--Section Multiple Information-->
+	<section class="services">
+		<p class="services-title">
+			Nous travaillons avec beaucoup de clients, voici nos réalisations.
+		</p>
+		<div class="wrapper-services">
+			<div class="container-service">
+				<a class='open-modal' href="#no" data-lightbox="./assets/img/1.webp" data-gallery-id="gallery-1" data-caption="Refonte d'un site web pour un journal local" data-frame="snapshot-lb"><img src="./assets/img/1.webp" alt="Photo" class="img-responsive portfolio-thumb" /></a>
+				<h3 class="info-title">
+					Refonte d'un site web pour un journal local
+				</h3>
+				<p class="text">
+					Nous avons créé une nouvelle identité visuelle pour un journal lyonnais.
+				</p>
+			</div>
+			<div class="container-service">
+				<a class='open-modal' href="#no" data-lightbox="./assets/img/2.webp" data-gallery-id="gallery-1" data-caption="Création d'un site web pour photographes" data-frame="snapshot-lb"><img src="./assets/img/2.webp" alt="Photo" class="img-responsive portfolio-thumb" /></a>
+				<h3 class="info-title">
+					Création d'un site web pour photographes
+				</h3>
+				<p class="text">
+					Nous avons conçu la plateforme idéale pour laisser place aux clichés des photographes.
+				</p>
+			</div>
+			<div class="container-service">
+				<a class='open-modal' href="#no" data-lightbox="./assets/img/3.webp" data-gallery-id="gallery-1" data-caption="Création d'un site internet pour un voyageur" data-frame="snapshot-lb"><img src="./assets/img/3.webp" alt="Photo" class="img-responsive portfolio-thumb" /></a>
+				<h3 class="info-title">
+					Création d'un site internet pour un voyageur
+				</h3>
+				<p class="text">
+					Nous avons élaboré un site internet et des illustrations pour sublimer les vidéos et les articles de ce voyageur.
+				</p>
+			</div>
+			<div class="container-service">
+				<a class='open-modal' href="#no" data-lightbox="./assets/img/4.webp" data-gallery-id="gallery-1" data-caption="Conception d'un site pour une agence de mariage" data-frame="snapshot-lb"><img src="./assets/img/4.webp" alt="Photo" class="img-responsive portfolio-thumb" /></a>
+				<h3 class="info-title">
+					Conception d'un site pour une agence de mariage
+				</h3>
+				<p class="text">
+					Nous avons travaillé avec cette agence pour créer un site internet permettant la présentation détaillée de leurs prestations.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!--Section Bottom-Banner-->
+	<section class="bottom-banner">
+		<h2 class="text-banner">
+			Prêt pour redonner vie à votre projet ?<br>Contactez notre équipe !
+		</h2>
+		<button type="button" class="button" onclick="window.location.href='contact.html';">
+			Contact
+		</button>
+	</section>
+	<div id="lightbox-modal" class="modal fade in">
+		<div class="modal-dialog">
+			<div class="modal-content snapshot-lb blocs-lb-container">
+				<button id="blocs-lightbox-close-btn" type="button" class="close-lightbox" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+				<div class="modal-body">
+					<a href="#no" class="prev-lightbox" aria-label="prev">
+						<span class="fa fa-chevron-left">◄</span>
+					</a>
+					<a href="#no" class="next-lightbox" aria-label="next">
+						<span class="fa fa-chevron-right">►</span>
+					</a>
+					<img id="lightbox-image" alt="photo" class="img-responsive" src="./assets/img/1.webp">
+					<p class="lightbox-caption"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='overlay' class="modal-backdrop fade in"></div>
+
+	</main>
+
+	<!--Footer-->
+	<footer>
+		<p class="text">
+			Agence La Panthère - Agence web basée à Lyon.<br>
+		</p>
+		<nav class="container-social">
+			<a class="social" href="index.html">Twitter
+				<svg class="twitter-icon">
+					<use href="assets/sprites.svg#twitter-icon"></use>
+				</svg>
+			</a>
+			<a class="social" href="index.html">Facebook
+				<svg class="facebook-icon">
+					<use href="assets/sprites.svg#facebook-icon"></use>
+				</svg>
+			</a>
+			<a class="social" href="index.html">Dribble
+				<svg class="dribble-icon">
+					<use href="assets/sprites.svg#dribble-icon"></use>
+				</svg>
+			</a>
+			<a class="social" href="index.html">Instagram
+				<svg class="instagram-icon">
+					<use href="assets/sprites.svg#instagram-icon"></use>
+				</svg>
+			</a>
+		</nav>
+	</footer>
+	<script src="/js/script.js"></script>
+</body>
+</html>

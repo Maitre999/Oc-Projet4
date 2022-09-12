@@ -1,0 +1,102 @@
+@use '../abstracts' as *;
+@use 'sass:map';
+
+body {
+    font-family: fontf(primary);
+    color: color(tertiary);
+}
+
+.company-name {
+    color: color(primary);
+    font-weight: 400;
+}
+.button {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.about-us {
+    text-align: center;
+}
+.about-us-title {
+    font-weight: 400;
+    font-size: fontz(m);
+    max-width: 600px;
+}
+.info-title {
+    font-size: fontz(s);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.text {
+    font-size: fontz(xs);
+}
+.citation {
+    color: #000;
+    font-size: fontz(sm);
+    font-style: italic;
+    span {
+        font-weight: 400;
+        font-style: normal;
+    }
+}
+.text-banner {
+    color: color(primary);
+    font-size: fontz(m);
+    line-height: 1.9rem;
+    font-weight: 400;
+}
+.container-middle-banner {
+    text-align: center;
+    .text,
+    a {
+        color: #fff;
+    }
+    a {
+        text-decoration: underline;
+        font-weight: 600;
+        font-size: fontz(m);
+        &:hover {
+            color: #ccc;
+        }
+    }
+}
+.services {
+    color: #000;
+    .services-title {
+        font-size: fontz(x);
+        line-height: 1.7rem;
+    }
+    .info-title {
+        font-size: fontz(s);
+    }
+    .text {
+        font-size: fontz(xs);
+    }
+    .container-service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.bottom-banner {
+    text-align: center;
+}
+footer {
+    .text {
+        color: #000;
+        text-align: center;
+    }
+}
+
+//Contact page
+
+.banner-contact {
+    .contact-title {
+        font-size: fontz(lg);
+    }
+    .text {
+        font-size: fontz(m);
+    }
+}

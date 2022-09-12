@@ -1,0 +1,209 @@
+@use '../abstracts' as *;
+
+.top-banner,
+.middle-banner,
+.bottom-banner,
+.container-middle-banner {
+    background: url(/assets/img/texture-paper.avif);
+    background-size: 280px 280px;
+}
+.top-banner {
+    height: 27.47rem;
+    @include mq-m(l) {
+        height: 20rem;
+    }
+    .container-top-banner {
+        height: 100%;
+        .wrapper-banner {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            @include mq-m(l) {
+                transform: translateY(-100%);
+            }
+        }
+        .logo {
+            width: 100px;
+            aspect-ratio: 1/1;
+        }
+        .company-name {
+            padding: 1.4rem 0 2rem 0;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            background: url(/assets/img/agence-la-panthere.webp) no-repeat;
+            background-attachment: fixed;
+            background-position: 50% 0;
+            background-size: 1920px;
+            inset: 0;
+            height: calc(27.47rem + #{$footer-h});
+            z-index: -1;
+            @include mq-m(xl2) {
+                top: 0;
+                background-attachment: initial;
+            }
+            @include mq-m(l) {
+                position: relative;
+                height: 100%;
+                top: 0;
+                display: block;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: #364577;
+            width: 100%;
+            height: calc(27.47rem + #{$footer-h});
+            z-index: -2;
+            inset: 0;
+            @include mq-m(l) {
+            }
+        }
+    }
+}
+.middle-banner {
+    height: 34.61rem;
+    //z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 280px 280px;
+    @include mq-m(m) {
+        height: 45rem;
+    }
+    @include mq-m(l) {
+        height: 29rem;
+    }
+    @include mq-m(m2) {
+        height: 35rem;
+    }
+    @include mq-m(s) {
+        height: 40rem;
+    }
+    @include mq-m(xs) {
+        height: 48rem;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: #F3976C;
+        background: url(/assets/img/image-de-presentation.webp);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: 50% 0%;
+        height: inherit;
+        top: 0vh;
+        height: 200vh;
+        width: 100%;
+        z-index: -3;
+        @include mq-m(xl2) {
+            position: relative;
+            background-attachment: initial;
+            height: 100%;
+        }
+    }
+}
+.container-middle-banner {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 354px;
+    background-color: rgba(165, 147, 99, 0.8);
+    padding: 30px 40px 30px 40px;
+    @include mq-m(m) {
+        height: fit-content;
+    }
+    @include mq-m(m2) {
+        width: 100%;
+    }
+    @include mq-m(m2) {
+        width: 100%;
+    }
+    .text-banner {
+        padding: 0 1rem 1.5rem 1rem;
+    }
+    a {
+        padding-top: 1rem;
+        transition: color 0.3s ease-in-out;
+    }
+}
+.bottom-banner {
+    position: relative;
+    height: 366px;
+    &::before {
+        content: '';
+        display: block;
+        position: relative;
+        background: url(/assets/img/agence-la-panthere.webp);
+        background-size: cover;
+        background-position: 50% 50%;
+        height: inherit;
+        width: 100%;
+        z-index: -1;
+    }
+    .text-banner {
+        position: absolute;
+        left: 50%;
+        top: 35%;
+        transform: translate(-50%, -50%);
+        @include mq-m(m) {
+            width: 85%;
+        }
+    }
+    .button {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+    }
+}
+.slide-banner::before {
+    top: 0 !important;
+}
+.banner-contact {
+    position: relative;
+    height: 20rem;
+    width: 100%;
+    background-color: color(primary);
+    background: url(/assets/img/texture-paper.avif),
+                url(/assets/img/dots-bg.webp);
+    background-size: 280px 280px;
+    padding: 100px 0;
+    text-align: center;
+    @include mq-m(l) {
+        height: 12.56rem;
+        padding: 40px 0;
+    }
+    @include mq-m(l) {
+        padding: 20px 0;
+    }
+    @include mq-m(s) {
+        height: auto;
+    }
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        inset: 0;
+        background-color: color(primary);
+        z-index: -1;
+    }
+    .contact-title {
+        padding-bottom: 1.5rem;
+        @include mq-m(l) {
+            padding: .7rem .6rem;
+        }
+    }
+    .text {
+        padding: 0 1rem;
+    }
+}

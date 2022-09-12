@@ -1,0 +1,16 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+};
+@function fontf($font) {
+    @return map-get($fonts, $font)
+};
+@function fontz($font-size) {
+    @return map-get($fonts-size, $font-size)
+};
+/*@function gray($amount) {
+    @return darken(#fff, $amount)
+};
+*/

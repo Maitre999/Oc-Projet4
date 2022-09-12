@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+footer {
+    color: #fff;
+    height: 150px;
+    background-color: color(primary);
+    .text {
+        padding: 1.5rem 0 2rem 0;
+    }
+    a {
+        visibility: hidden;
+    }
+    .container-social {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .social {
+        height: 30px;
+        aspect-ratio: 1/1;
+        display: block;
+        svg {
+            visibility: visible;
+            position: relative;
+            top: -30px;
+            height: inherit;
+            width: 30px;
+            fill: rgba(255, 255, 255, .6);
+            &:hover {
+                fill: #fff;
+            }
+        }
+    }
+}

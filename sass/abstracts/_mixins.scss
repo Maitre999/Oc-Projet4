@@ -1,0 +1,75 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/breakpoints' as*;
+@use 'sass:map';
+
+@mixin firefox-only {
+  @at-root {
+    @-moz-document url-prefix() {
+      & {
+        @content;
+      }
+    }
+  }
+}
+@mixin translate-center {
+  transform: translate(-50%, -50%);
+}
+@mixin translate-center-x {
+  transform: translateX(-50%);
+}
+@mixin translate-center-y {
+  transform: translateY(-50%);
+}
+@mixin flex-bar-right {
+  display: flex;
+  position: relative;
+  nav {
+    position: absolute;
+    inset: 50% 5% auto auto;
+    @include translate-center-y;
+  }
+}
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin shadow($amount: 0.23) {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, $amount);
+}
+@mixin shadow-effect {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, .3);
+}
+@mixin button {
+    position: relative;
+    border-radius: 25px;
+    height: 50px;
+    padding: 0 26px;
+    color: #fff;
+    font-size: fontz(text-m);
+    font-weight: 500;
+    cursor: pointer;
+    background: linear-gradient(356deg, color(primary), color(secondary));
+    @include shadow();
+}
+@mixin after-position {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: inherit;
+}
+@mixin mq-m($key) {
+  $size: map.get($breakpoints, $key);
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}

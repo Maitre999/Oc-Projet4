@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.button {
+    position: relative;
+    cursor: pointer;
+    padding: .9rem 1.8rem;
+    border-radius: 2rem;
+    background-color: color(primary);
+    border-color: rgba(140, 130, 115, 0.08) rgba(140, 130, 115, 0.08) rgba(140, 130, 115, 0.1);
+    text-shadow: rgb(0 0 1 / 10%) 0px 1px 0px;
+    box-shadow: rgb(0 0 1 / 25%) 0px 1px 3px, rgb(24 26 27 / 15%) 0px 1px 0px 0px inset;
+    transition: background-color 0.3s ease-in-out;
+    opacity: 1;
+    &:hover {
+        background-color: #c27956 ;
+    }
+}
