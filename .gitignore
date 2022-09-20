@@ -1,5 +1,5 @@
 node_modules
-.vscode/launch.json
+.vscode/
 package-lock.json
 package.json
 pure-swipe-min.js
