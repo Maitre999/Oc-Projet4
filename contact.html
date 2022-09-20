@@ -5,9 +5,14 @@
     <meta name="keywords" content="La panthere, contact, agence de web design">
     <meta name="description" content="Formulaire de contact">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta name="robots" content="noindex">
 
 	<link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
 	<link rel="stylesheet" type="text/css" href="./css/style.min.css">
+
+	<script src="./js/jquery-2.1.0.min.js" defer></script>
+	<script src="./js/jqBootstrapValidation.min.js" defer></script>
+	<script src="./js/formHandler.min.js" defer></script>
 
 	<title>Contact</title>
 
@@ -62,32 +67,24 @@
 			</p>
 		</article>
 		<!--Contact-formulaire-->
-		<form id="form_1" novalidate>
+		<form id="form_1" novalidate success-msg="Your message has been sent." fail-msg="Sorry it seems that our mail server is not responding, Sorry for the inconvenience!">
 			<div class="form-group">
-				<label>
-					Nom
-					<input id="name" class="form-control" required />
-				</label>
+				<label>Nom</label>
+				<input id="name" class="form-control" required />
 			</div>
 			<div class="form-group">
-				<label>
-					Adresse email
-					<input id="email" class="form-control" type="email" required />
-				</label>
+				<label>Adresse email</label>
+				<input id="email" class="form-control" type="email" required />
 			</div>
 			<div class="form-group">
-				<label>
-					Comment nous avez-vous connu ?
-					<input class="form-control" type="email" required id="input_504" />
-				</label>
+				<label>Comment nous avez-vous connu ?</label>
+				<input class="form-control" type="text" required id="input_504" />
 			</div>
 			<div class="form-group">
-				<label>
-					Brief de votre projet (Ajoutez autant de détails que nécessaire)<br>
+				<label>Brief de votre projet (Ajoutez autant de détails que nécessaire)<br></label>
 				<textarea id="message" class="form-control" rows="4" cols="50" required></textarea>
-				</label>
 			</div> 
-			<button class="button" type="submit">
+			<button class="button send" type="submit" value="Submit">
 				Envoyer
 			</button>
 		</form>

@@ -24,13 +24,69 @@ const prevBtnImg = (display) => {
   document.querySelector(".prev-lightbox").style.display = display;
 };
 
+const imgKeyChange = document.addEventListener("keydown", (e) => {
+  checkIfBtnNeeded();
+  if (e.key === "ArrowLeft") {
+    if (arrayNumber > 0 && arrayNumber < 4 && arrayNumber !== undefined) {
+      prevImg();
+      checkIfBtnNeeded();
+    } else {
+    }
+  }
+  if (e.key === "ArrowRight") {
+    if (arrayNumber >= 0 && arrayNumber < 3) {
+      nextImg();
+      checkIfBtnNeeded();
+    } else {
+    }
+  }
+  if (body.classList.contains("modal-open")) {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  }
+});
+
 function textChange() {
   document.querySelector(".lightbox-caption").textContent =
     textData[arrayNumber];
 }
 
-let arrayNumber = "";
-let imgNumber = "";
+function nextImg() {
+  imgNumber++;
+  arrayNumber++;
+  document.querySelector(".lightbox-caption").textContent =
+    textData[arrayNumber];
+  changeImage.src = `./assets/img/${imgNumber}.webp`;
+}
+
+function prevImg() {
+  imgNumber--;
+  arrayNumber--;
+  textChange();
+  changeImage.src = `./assets/img/${imgNumber}.webp`;
+}
+
+function checkIfBtnNeeded() {
+  if (arrayNumber === 0) {
+    prevBtnImg("none");
+  } else if (arrayNumber === 3) {
+    nextBtnImg("none");
+  } else if (arrayNumber > 0 && arrayNumber < 3) {
+    prevBtnImg("block");
+    nextBtnImg("block");
+  }
+}
+
+function closeModal() {
+  document.getElementById("lightbox-modal").classList.remove("opened");
+  modalOverlay.style.visibility = "hidden";
+  modalOverlay.style.opacity = "0";
+  body.classList.remove("modal-open");
+}
+
+let arrayNumber = undefined;
+let imgNumber = undefined;
 
 for (let i = 0; i < images.length; i++)
   images[i].addEventListener("click", () => {
@@ -42,87 +98,38 @@ for (let i = 0; i < images.length; i++)
     document.getElementById("lightbox-modal").classList.add("opened");
     modalOverlay.style.visibility = "visible";
     modalOverlay.style.opacity = ".5";
-    if (arrayNumber === 0) {
-      prevBtnImg("none");
-    } else if (arrayNumber === 3) {
-      nextBtnImg("none");
-    } else if (arrayNumber > 0 && arrayNumber < 3) {
-      prevBtnImg("block");
-      nextBtnImg("block");
-    }
+    checkIfBtnNeeded();
   });
 
 document.querySelector(".prev-lightbox").addEventListener("click", () => {
-  imgNumber--;
-  arrayNumber--;
-  textChange();
-  changeImage.src = `./assets/img/${imgNumber}.webp`;
-  if (arrayNumber === 0) {
-    prevBtnImg("none");
-  } else if (arrayNumber > 0 && arrayNumber < 3) {
-    prevBtnImg("block");
-    nextBtnImg("block");
-  }
+  prevImg();
+  checkIfBtnNeeded();
 });
 document.querySelector(".next-lightbox").addEventListener("click", () => {
-  imgNumber++;
-  arrayNumber++;
-  document.querySelector(".lightbox-caption").textContent =
-    textData[arrayNumber];
-  changeImage.src = `./assets/img/${imgNumber}.webp`;
-  if (arrayNumber === 3) {
-    nextBtnImg("none");
-  } else if (arrayNumber > 0 && arrayNumber < 3) {
-    prevBtnImg("block");
-    nextBtnImg("block");
-  }
+  nextImg();
+  checkIfBtnNeeded();
 });
 
 document.querySelector(".close-lightbox").addEventListener("click", () => {
-  document.getElementById("lightbox-modal").classList.remove("opened");
-  modalOverlay.style.visibility = "hidden";
-  modalOverlay.style.opacity = "0";
-  body.classList.remove("modal-open");
-  prevBtnImg("block");
-  nextBtnImg("block");
+  closeModal();
 });
 
 document.getElementById("overlay").addEventListener("click", () => {
-  document.getElementById("lightbox-modal").classList.remove("opened");
-  modalOverlay.style.visibility = "hidden";
-  modalOverlay.style.opacity = "0";
-  body.classList.remove("modal-open");
-  prevBtnImg("block");
-  nextBtnImg("block");
+  closeModal();
 });
 
 document.querySelector(".modal").addEventListener("swiped-left", () => {
   if (arrayNumber < 3) {
-    prevBtnImg("block");
-    nextBtnImg("block");
-    imgNumber++;
-    arrayNumber++;
-    document.querySelector(".lightbox-caption").textContent =
-      textData[arrayNumber];
-    changeImage.src = `./assets/img/${imgNumber}.webp`;
+    nextImg();
   }
-  if (arrayNumber === 3) {
-    nextBtnImg("none");
-  }
+  checkIfBtnNeeded();
 });
 
 document.querySelector(".modal").addEventListener("swiped-right", () => {
   if (arrayNumber > 0) {
-    prevBtnImg("block");
-    nextBtnImg("block");
-    imgNumber--;
-    arrayNumber--;
-    textChange();
-    changeImage.src = `./assets/img/${imgNumber}.webp`;
+    prevImg();
   }
-  if (arrayNumber === 0) {
-    prevBtnImg("none");
-  }
+  checkIfBtnNeeded();
 });
 
 /*!
